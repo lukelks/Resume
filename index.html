@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Modern Resume Generator</h1>
+            <p>Create a professional resume in minutes</p>
+        </header>
+
+        <div class="options-container">
+            <div class="option-card" id="manual-option">
+                <i class="fas fa-user-edit"></i>
+                <h2>Manual Entry</h2>
+                <p>Fill in your details manually</p>
+                <button class="option-btn" onclick="showManualForm()">Select</button>
+            </div>
+
+            <div class="option-card" id="ai-option">
+                <i class="fas fa-robot"></i>
+                <h2>AI Generation</h2>
+                <p>Let AI create your resume content</p>
+                <button class="option-btn" onclick="showAIGenerator()">Select</button>
+            </div>
+        </div>
+
+        <!-- Manual Input Form -->
+        <div id="manual-form" class="form-container hidden">
+            <h2>Enter Your Details</h2>
+            <form id="resume-form">
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-group">
+                        <input type="text" id="full-name" placeholder="Full Name" required>
+                        <input type="text" id="job-title" placeholder="Professional Title">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email">
+                        <input type="tel" id="phone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="location" placeholder="Location">
+                        <input type="url" id="linkedin" placeholder="LinkedIn (optional)">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Professional Summary</h3>
+                    <textarea id="summary" placeholder="Brief summary of your professional background and skills"></textarea>
+                </div>
+
+                <div class="form-section">
+                    <h3>Work Experience</h3>
+                    <div id="experience-container">
+                        <div class="experience-entry">
+                            <input type="text" placeholder="Job Title" class="exp-title">
+                            <input type="text" placeholder="Company" class="exp-company">
+                            <input type="text" placeholder="Duration (e.g., 2020-2022)" class="exp-duration">
+                            <textarea placeholder="Description of responsibilities and achievements" class="exp-description"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" onclick="addExperience()">
+                        <i class="fas fa-plus"></i> Add Another Position
+                    </button>
+                </div>
+
+                <div class="form-section">
+                    <h3>Education</h3>
+                    <div id="education-container">
+                        <div class="education-entry">
+                            <input type="text" placeholder="Degree/Certificate" class="edu-degree">
+                            <input type="text" placeholder="Institution" class="edu-institution">
+                            <input type="text" placeholder="Duration (e.g., 2016-2020)" class="edu-duration">
+                        </div>
+                    </div>
+                    <button type="button" class="add-btn" onclick="addEducation()">
+                        <i class="fas fa-plus"></i> Add Another Education
+                    </button>
+                </div>
+
+                <div class="form-section">
+                    <h3>Skills</h3>
+                    <div class="form-group">
+                        <input type="text" id="skills" placeholder="List your skills separated by commas (e.g., JavaScript, React, UI/UX Design)">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="goBackToOptions()">Back</button>
+                    <button type="submit" class="btn-primary">Generate Resume</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- AI Generator Form -->
+        <div id="ai-form" class="form-container hidden">
+            <h2>AI Resume Generator</h2>
+            <div class="ai-input">
+                <div class="form-group">
+                    <label for="ai-job-title">Desired Job Title</label>
+                    <input type="text" id="ai-job-title" placeholder="e.g., Frontend Developer, Data Analyst">
+                </div>
+                <div class="form-group">
+                    <label for="ai-course">Course/Major Studied</label>
+                    <input type="text" id="ai-course" placeholder="e.g., Computer Science, Business Administration">
+                </div>
+                <div class="form-group">
+                    <label for="ai-experience">Years of Experience</label>
+                    <select id="ai-experience">
+                        <option value="0-1">0-1 years</option>
+                        <option value="2-5">2-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="goBackToOptions()">Back</button>
+                    <button type="button" class="btn-primary" onclick="generateResumeWithAI()">
+                        <i class="fas fa-magic"></i> Generate Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Preview -->
+        <div id="resume-preview" class="hidden">
+            <div class="preview-header">
+                <h2>Your Resume Preview</h2>
+                <div class="preview-actions">
+                    <button class="btn-secondary" onclick="goBackToForm()">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="btn-primary" onclick="printResume()">
+                        <i class="fas fa-print"></i> Print/Export
+                    </button>
+                </div>
+            </div>
+            <div class="resume" id="resume">
+                <!-- Resume content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="Profile.html"></script>
+</body>
+</html>

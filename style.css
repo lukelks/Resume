@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.option-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.option-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+#ai-option i {
+    color: #9b59b6;
+}
+
+.option-card h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.option-card p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#ai-option .option-btn {
+    background: #9b59b6;
+}
+
+.option-btn:hover {
+    background: #2980b9;
+}
+
+#ai-option .option-btn:hover {
+    background: #8e44ad;
+}
+
+.form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-container h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.experience-entry,
+.education-entry {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.experience-entry input,
+.experience-entry textarea,
+.education-entry input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.add-btn {
+    background: transparent;
+    color: #3498db;
+    border: 1px dashed #3498db;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #7f8c8d;
+}
+
+.ai-input {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ai-input .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ai-input label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Resume Preview Styles */
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.resume {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume-header h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.resume-header .title {
+    color: #3498db;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.resume-section {
+    margin-bottom: 25px;
+}
+
+.resume-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3, .education-item h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.experience-item .company, .education-item .institution {
+    color: #3498db;
+    font-weight: 500;
+}
+
+.experience-item .duration, .education-item .duration {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: #eaf2f8;
+    color: #3498db;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .options-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .form-group input, 
+    .form-group select,
+    .form-group textarea {
+        min-width: 100%;
+    }
+    
+    .preview-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .resume {
+        padding: 20px;
+    }
+}
